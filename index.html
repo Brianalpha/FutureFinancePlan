@@ -266,6 +266,73 @@
             transform: scaleX(1);
         }
         
+        /* 移动端折叠卡片 */
+        .mobile-collapse-header {
+            display: none;
+        }
+        
+        .mobile-collapse-content {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .info-card {
+                padding: 0;
+            }
+            
+            .mobile-collapse-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 18px 20px;
+                cursor: pointer;
+                background: linear-gradient(135deg, #F8FAFC 0%, #FFFFFF 100%);
+                transition: var(--transition);
+            }
+            
+            .mobile-collapse-header:active {
+                background: linear-gradient(135deg, #EEF2FF 0%, #F8FAFC 100%);
+            }
+            
+            .mobile-collapse-title {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-weight: 700;
+                font-size: 1rem;
+                color: var(--text-dark);
+            }
+            
+            .mobile-collapse-icon {
+                color: var(--text-muted);
+                transition: var(--transition);
+                font-size: 1.1rem;
+            }
+            
+            .info-card.expanded .mobile-collapse-icon {
+                transform: rotate(180deg);
+                color: #667eea;
+            }
+            
+            .mobile-collapse-content {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            .info-card.expanded .mobile-collapse-content {
+                max-height: 2000px;
+            }
+            
+            .mobile-collapse-inner {
+                padding: 20px;
+            }
+            
+            .info-card h3 {
+                display: none;
+            }
+        }
+        
         .info-card h3 {
             color: var(--text-dark);
             margin-bottom: 20px;
@@ -322,6 +389,72 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
             margin: 30px 0;
+        }
+        
+        /* 移动端横向滚动容器 */
+        .mobile-scroll-container {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-grid {
+                display: none;
+            }
+            
+            .mobile-scroll-container {
+                display: block;
+                overflow-x: auto;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                margin: 24px -16px;
+                padding: 0 16px;
+                scroll-snap-type: x mandatory;
+            }
+            
+            .mobile-scroll-container::-webkit-scrollbar {
+                display: none;
+            }
+            
+            .mobile-scroll-wrapper {
+                display: flex;
+                gap: 16px;
+                padding-bottom: 8px;
+            }
+            
+            .mobile-scroll-item {
+                flex: 0 0 85%;
+                scroll-snap-align: start;
+            }
+            
+            .scroll-indicator {
+                text-align: center;
+                color: var(--text-muted);
+                font-size: 0.85rem;
+                margin-top: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+            }
+            
+            .scroll-dots {
+                display: flex;
+                gap: 6px;
+            }
+            
+            .scroll-dot {
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: var(--border-color);
+                transition: var(--transition);
+            }
+            
+            .scroll-dot.active {
+                width: 20px;
+                border-radius: 3px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            }
         }
         
         .comparison-card {
@@ -1221,6 +1354,93 @@
                         </div>
                     </div>
             </div>
+            
+            <!-- 移动端横向滚动版本 -->
+            <div class="mobile-scroll-container">
+                <div class="mobile-scroll-wrapper">
+                    <div class="mobile-scroll-item">
+                        <div class="comparison-card">
+                            <h4><i class="fas fa-ring"></i> 27岁：结婚购房</h4>
+                            <div class="version-row">
+                                <span class="version-label">🚀 乐观版</span>
+                                <span class="version-value value-optimistic">119万</span>
+                            </div>
+                            <div class="version-row">
+                                <span class="version-label">⚖️ 均衡版</span>
+                                <span class="version-value value-medium">96万</span>
+                            </div>
+                            <div class="version-row">
+                                <span class="version-label">🛡️ 悲观版</span>
+                                <span class="version-value value-pessimistic">86万</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-scroll-item">
+                        <div class="comparison-card">
+                            <h4><i class="fas fa-baby"></i> 32岁：育儿初期结束</h4>
+                            <div class="version-row">
+                                <span class="version-label">🚀 乐观版</span>
+                                <span class="version-value value-optimistic">276万</span>
+                            </div>
+                            <div class="version-row">
+                                <span class="version-label">⚖️ 均衡版</span>
+                                <span class="version-value value-medium">134万</span>
+                            </div>
+                            <div class="version-row">
+                                <span class="version-label">🛡️ 悲观版</span>
+                                <span class="version-value value-pessimistic">116万</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-scroll-item">
+                        <div class="comparison-card">
+                            <h4><i class="fas fa-users"></i> 37岁：承担赡养责任</h4>
+                            <div class="version-row">
+                                <span class="version-label">🚀 乐观版</span>
+                                <span class="version-value value-optimistic">622万</span>
+                            </div>
+                            <div class="version-row">
+                                <span class="version-label">⚖️ 均衡版</span>
+                                <span class="version-value value-medium">297万</span>
+                            </div>
+                            <div class="version-row">
+                                <span class="version-label">🛡️ 悲观版</span>
+                                <span class="version-value value-pessimistic">182万</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-scroll-item">
+                        <div class="comparison-card">
+                            <h4><i class="fas fa-crown"></i> 42岁：财务自由</h4>
+                            <div class="version-row">
+                                <span class="version-label">🚀 乐观版</span>
+                                <span class="version-value value-optimistic">1125万</span>
+                            </div>
+                            <div class="version-row">
+                                <span class="version-label">⚖️ 均衡版</span>
+                                <span class="version-value value-medium">484万</span>
+                            </div>
+                            <div class="version-row">
+                                <span class="version-label">🛡️ 悲观版</span>
+                                <span class="version-value value-pessimistic">277万</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <i class="fas fa-hand-point-right" style="font-size: 0.9rem;"></i>
+                    <span>左右滑动查看更多</span>
+                    <div class="scroll-dots">
+                        <div class="scroll-dot active"></div>
+                        <div class="scroll-dot"></div>
+                        <div class="scroll-dot"></div>
+                        <div class="scroll-dot"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1612,24 +1832,44 @@
             </h2>
             
             <div class="info-grid">
-                <div class="info-card">
+                <div class="info-card expanded">
+                        <div class="mobile-collapse-header" onclick="toggleCollapse(this)">
+                            <div class="mobile-collapse-title">
+                                <i class="fas fa-chart-line"></i> 核心假设
+                            </div>
+                            <i class="fas fa-chevron-down mobile-collapse-icon"></i>
+                        </div>
                         <h3><i class="fas fa-chart-line"></i> 核心假设</h3>
+                        <div class="mobile-collapse-content">
+                            <div class="mobile-collapse-inner">
                         <ul>
                             <li>投资回报：年化 8%</li>
                             <li>27岁薪资：35.5万/年</li>
                             <li>职业发展：持续增长</li>
                             <li>42岁薪资：63.5万/年</li>
                     </ul>
+                            </div>
+                        </div>
                 </div>
                 
                 <div class="info-card">
+                        <div class="mobile-collapse-header" onclick="toggleCollapse(this)">
+                            <div class="mobile-collapse-title">
+                                <i class="fas fa-seedling"></i> 情景特点
+                            </div>
+                            <i class="fas fa-chevron-down mobile-collapse-icon"></i>
+                        </div>
                         <h3><i class="fas fa-seedling"></i> 情景特点</h3>
+                        <div class="mobile-collapse-content">
+                            <div class="mobile-collapse-inner">
                         <ul>
                             <li>积极投资策略</li>
                             <li>顺利职业晋升</li>
                             <li>收入持续上涨</li>
                             <li>最优发展路径</li>
                     </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
@@ -1851,24 +2091,44 @@
                 </h2>
 
                 <div class="info-grid">
-                <div class="info-card">
+                <div class="info-card expanded">
+                        <div class="mobile-collapse-header" onclick="toggleCollapse(this)">
+                            <div class="mobile-collapse-title">
+                                <i class="fas fa-chart-line"></i> 核心假设
+                            </div>
+                            <i class="fas fa-chevron-down mobile-collapse-icon"></i>
+                        </div>
                         <h3><i class="fas fa-chart-line"></i> 核心假设</h3>
+                        <div class="mobile-collapse-content">
+                            <div class="mobile-collapse-inner">
                         <ul>
                             <li>投资回报：年化 5%</li>
                             <li>27岁薪资：28万/年</li>
                             <li>27-31岁：薪资平台期</li>
                             <li>32岁跃升：46万/年</li>
                     </ul>
+                            </div>
+                        </div>
                 </div>
                 
                 <div class="info-card">
+                        <div class="mobile-collapse-header" onclick="toggleCollapse(this)">
+                            <div class="mobile-collapse-title">
+                                <i class="fas fa-balance-scale"></i> 情景特点
+                            </div>
+                            <i class="fas fa-chevron-down mobile-collapse-icon"></i>
+                        </div>
                         <h3><i class="fas fa-balance-scale"></i> 情景特点</h3>
+                        <div class="mobile-collapse-content">
+                            <div class="mobile-collapse-inner">
                         <ul>
                             <li>稳健投资策略</li>
                             <li>有职业平台期</li>
                             <li>最终实现跃升</li>
                             <li>最可能的路径</li>
                     </ul>
+                            </div>
+                        </div>
                 </div>
             </div>
 
@@ -2085,24 +2345,44 @@
             </h2>
 
                 <div class="info-grid">
-                    <div class="info-card">
+                    <div class="info-card expanded">
+                        <div class="mobile-collapse-header" onclick="toggleCollapse(this)">
+                            <div class="mobile-collapse-title">
+                                <i class="fas fa-chart-line"></i> 核心假设
+                            </div>
+                            <i class="fas fa-chevron-down mobile-collapse-icon"></i>
+                        </div>
                         <h3><i class="fas fa-chart-line"></i> 核心假设</h3>
+                        <div class="mobile-collapse-content">
+                            <div class="mobile-collapse-inner">
                         <ul>
                             <li>投资回报：年化 3%</li>
                             <li>27岁薪资：28万/年</li>
                             <li>27-34岁：8年瓶颈期</li>
                             <li>35岁跃升：39万/年</li>
                         </ul>
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="info-card">
+                        <div class="mobile-collapse-header" onclick="toggleCollapse(this)">
+                            <div class="mobile-collapse-title">
+                                <i class="fas fa-shield-alt"></i> 情景特点
+                            </div>
+                            <i class="fas fa-chevron-down mobile-collapse-icon"></i>
+                        </div>
                         <h3><i class="fas fa-shield-alt"></i> 情景特点</h3>
+                        <div class="mobile-collapse-content">
+                            <div class="mobile-collapse-inner">
                         <ul>
                             <li>保守投资策略</li>
                             <li>长期职业瓶颈</li>
                             <li>增长缓慢艰难</li>
                             <li>压力测试版本</li>
                         </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
@@ -2698,9 +2978,42 @@
         }
 
         // 创建各版本图表
-        const optimisticChart = createVersionChart('optimisticChart', optimisticData, '#4CAF50');
-        const mediumChart = createVersionChart('mediumChart', mediumData, '#2196F3');
-        const pessimisticChart = createVersionChart('pessimisticChart', pessimisticData, '#FF9800');
+        const optimisticChart = createVersionChart('optimisticChart', optimisticData, '#10B981');
+        const mediumChart = createVersionChart('mediumChart', mediumData, '#3B82F6');
+        const pessimisticChart = createVersionChart('pessimisticChart', pessimisticData, '#F59E0B');
+
+        // 移动端横向滚动指示器
+        if (isMobile) {
+            const scrollContainer = document.querySelector('.mobile-scroll-container');
+            const scrollDots = document.querySelectorAll('.scroll-dot');
+            
+            if (scrollContainer && scrollDots.length > 0) {
+                scrollContainer.addEventListener('scroll', function() {
+                    const scrollLeft = this.scrollLeft;
+                    const scrollWidth = this.scrollWidth;
+                    const clientWidth = this.clientWidth;
+                    const scrollableWidth = scrollWidth - clientWidth;
+                    
+                    // 计算当前是第几个卡片
+                    const cardIndex = Math.round((scrollLeft / scrollableWidth) * (scrollDots.length - 1));
+                    
+                    // 更新点点状态
+                    scrollDots.forEach((dot, index) => {
+                        if (index === cardIndex) {
+                            dot.classList.add('active');
+                        } else {
+                            dot.classList.remove('active');
+                        }
+                    });
+                });
+            }
+        }
+        
+        // 折叠卡片功能
+        function toggleCollapse(header) {
+            const card = header.closest('.info-card');
+            card.classList.toggle('expanded');
+        }
     </script>
 </body>
 </html>
