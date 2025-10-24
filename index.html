@@ -410,6 +410,16 @@
             display: none;
         }
         
+        /* 阶段详解横向滚动容器 */
+        .phase-scroll-container {
+            position: relative;
+        }
+        
+        /* 核心假设横向滚动容器 */
+        .assumptions-scroll-container {
+            position: relative;
+        }
+        
         @media (max-width: 768px) {
             .comparison-grid {
                 display: none;
@@ -420,7 +430,7 @@
                 overflow-x: auto;
                 overflow-y: hidden;
                 -webkit-overflow-scrolling: touch;
-                margin: 24px -16px;
+                margin: 24px -16px 0;
                 padding: 0 16px;
                 scroll-snap-type: x mandatory;
             }
@@ -446,6 +456,61 @@
                 }
             }
             
+            /* 阶段卡片横向滚动 */
+            .phase-scroll-container {
+                overflow-x: auto;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                margin: 24px -16px 0;
+                padding: 0 16px;
+                scroll-snap-type: x mandatory;
+            }
+            
+            .phase-scroll-container::-webkit-scrollbar {
+                display: none;
+            }
+            
+            .phase-scroll-wrapper {
+                display: flex;
+                gap: 16px;
+                padding-bottom: 8px;
+            }
+            
+            .phase-scroll-wrapper .phase-card {
+                flex: 0 0 85%;
+                scroll-snap-align: start;
+                margin: 0;
+            }
+            
+            /* 核心假设横向滚动 */
+            .assumptions-grid {
+                display: none;
+            }
+            
+            .assumptions-scroll-container {
+                overflow-x: auto;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                margin: 24px -16px 0;
+                padding: 0 16px;
+                scroll-snap-type: x mandatory;
+            }
+            
+            .assumptions-scroll-container::-webkit-scrollbar {
+                display: none;
+            }
+            
+            .assumptions-scroll-wrapper {
+                display: flex;
+                gap: 16px;
+                padding-bottom: 8px;
+            }
+            
+            .assumptions-scroll-wrapper .assumptions-card {
+                flex: 0 0 75%;
+                scroll-snap-align: start;
+            }
+            
             .scroll-indicator {
                 text-align: center;
                 color: var(--text-muted);
@@ -455,6 +520,9 @@
                 align-items: center;
                 justify-content: center;
                 gap: 8px;
+                position: relative;
+                background: var(--bg-light);
+                padding: 8px 0;
             }
             
             .scroll-dots {
@@ -474,6 +542,29 @@
                 width: 20px;
                 border-radius: 3px;
                 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            }
+            
+            /* key-stats在桌面端横向并列，更紧凑 */
+            .key-stats {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 16px;
+                margin: 24px 0;
+            }
+            
+            .stat-box {
+                background: var(--bg-white);
+                padding: 20px;
+                border-radius: var(--radius-lg);
+                text-align: center;
+                box-shadow: var(--shadow);
+                transition: var(--transition);
+                border: 1px solid var(--border-color);
+            }
+            
+            .stat-box:hover {
+                transform: translateY(-4px);
+                box-shadow: var(--shadow-lg);
             }
         }
         
@@ -1928,6 +2019,76 @@
                         </div>
                 </div>
             </div>
+            
+            <!-- 移动端横向滚动容器 -->
+            <div class="assumptions-scroll-container">
+                <div class="assumptions-scroll-wrapper">
+                    <div class="assumptions-card">
+                        <h3 style="color: var(--optimistic-color); margin-bottom: 15px;">
+                            <i class="fas fa-rocket"></i> 乐观版假设
+                        </h3>
+                        <div class="assumption-item">
+                            <strong>投资回报</strong>
+                            年化 8%（积极投资策略）
+                        </div>
+                        <div class="assumption-item">
+                            <strong>薪资增长</strong>
+                            27岁达到35.5万，持续增长至42岁63.5万
+                        </div>
+                        <div class="assumption-item">
+                            <strong>职业发展</strong>
+                            顺利晋升，收入持续上涨
+                        </div>
+                    </div>
+
+                    <div class="assumptions-card">
+                        <h3 style="color: var(--medium-color); margin-bottom: 15px;">
+                            <i class="fas fa-balance-scale"></i> 均衡版假设
+                        </h3>
+                        <div class="assumption-item">
+                            <strong>投资回报</strong>
+                            年化 5%（稳健投资策略）
+                        </div>
+                        <div class="assumption-item">
+                            <strong>薪资增长</strong>
+                            27岁达到28万，经历平台期后32岁跃升至46万
+                        </div>
+                        <div class="assumption-item">
+                            <strong>职业发展</strong>
+                            有平台期，但最终实现关键跃升
+                        </div>
+                    </div>
+
+                    <div class="assumptions-card">
+                        <h3 style="color: var(--pessimistic-color); margin-bottom: 15px;">
+                            <i class="fas fa-shield-alt"></i> 悲观版假设
+                        </h3>
+                        <div class="assumption-item">
+                            <strong>投资回报</strong>
+                            年化 3%（保守投资策略）
+                        </div>
+                        <div class="assumption-item">
+                            <strong>薪资增长</strong>
+                            27岁达到28万，35岁才跃升至39万
+                        </div>
+                        <div class="assumption-item">
+                            <strong>职业发展</strong>
+                            长期瓶颈，增长缓慢
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 滚动指示器 -->
+                <div class="scroll-indicator">
+                    <i class="fas fa-hand-point-right"></i>
+                    <span>左右滑动查看更多</span>
+                    <div class="scroll-dots">
+                        <div class="scroll-dot active"></div>
+                        <div class="scroll-dot"></div>
+                        <div class="scroll-dot"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -2031,10 +2192,13 @@
                     四个阶段详解
                 </h2>
 
-                <!-- Phase 1 -->
-                <div class="phase-card">
-                    <h3><i class="fas fa-rocket"></i> 第一阶段：奋力筑基 (22-27岁)</h3>
-                    <p class="phase-subtitle">积累首付款、结婚基金，为二人世界升级三人小家打下最坚实的经济基础</p>
+                <!-- 移动端横向滚动容器 -->
+                <div class="phase-scroll-container">
+                    <div class="phase-scroll-wrapper">
+                        <!-- Phase 1 -->
+                        <div class="phase-card">
+                            <h3><i class="fas fa-rocket"></i> 第一阶段：奋力筑基 (22-27岁)</h3>
+                            <p class="phase-subtitle">积累首付款、结婚基金，为二人世界升级三人小家打下最坚实的经济基础</p>
                     
                     <div class="phase-content">
                         <div class="phase-description">
@@ -2187,6 +2351,20 @@
                         </div>
                     </div>
                 </div>
+                    </div>
+                </div>
+                
+                <!-- 滚动指示器 -->
+                <div class="scroll-indicator">
+                    <i class="fas fa-hand-point-right"></i>
+                    <span>左右滑动查看更多</span>
+                    <div class="scroll-dots">
+                        <div class="scroll-dot active"></div>
+                        <div class="scroll-dot"></div>
+                        <div class="scroll-dot"></div>
+                        <div class="scroll-dot"></div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -2290,10 +2468,13 @@
                     四个阶段详解
                 </h2>
 
-                <!-- Phase 1 -->
-                <div class="phase-card">
-                    <h3><i class="fas fa-rocket"></i> 第一阶段：奋力筑基 (22-27岁)</h3>
-                    <p class="phase-subtitle">依靠早期职业红利，高效完成购房和组建家庭的原始资本积累</p>
+                <!-- 移动端横向滚动容器 -->
+                <div class="phase-scroll-container">
+                    <div class="phase-scroll-wrapper">
+                        <!-- Phase 1 -->
+                        <div class="phase-card">
+                            <h3><i class="fas fa-rocket"></i> 第一阶段：奋力筑基 (22-27岁)</h3>
+                            <p class="phase-subtitle">依靠早期职业红利，高效完成购房和组建家庭的原始资本积累</p>
                     
                     <div class="phase-content">
                         <div class="phase-description">
@@ -2441,6 +2622,20 @@
                         </div>
                     </div>
                 </div>
+                    </div>
+                </div>
+                
+                <!-- 滚动指示器 -->
+                <div class="scroll-indicator">
+                    <i class="fas fa-hand-point-right"></i>
+                    <span>左右滑动查看更多</span>
+                    <div class="scroll-dots">
+                        <div class="scroll-dot active"></div>
+                        <div class="scroll-dot"></div>
+                        <div class="scroll-dot"></div>
+                        <div class="scroll-dot"></div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -2544,10 +2739,13 @@
                     四个阶段详解（极限抗压版）
             </h2>
 
-            <!-- Phase 1 -->
-            <div class="phase-card">
-                <h3><i class="fas fa-rocket"></i> 第一阶段：奋力筑基 (22-27岁)</h3>
-                    <p class="phase-subtitle">在极低的投资回报下，依靠最原始的汗水，完成购房的资本积累</p>
+            <!-- 移动端横向滚动容器 -->
+            <div class="phase-scroll-container">
+                <div class="phase-scroll-wrapper">
+                    <!-- Phase 1 -->
+                    <div class="phase-card">
+                        <h3><i class="fas fa-rocket"></i> 第一阶段：奋力筑基 (22-27岁)</h3>
+                        <p class="phase-subtitle">在极低的投资回报下，依靠最原始的汗水，完成购房的资本积累</p>
                 
                 <div class="phase-content">
                     <div class="phase-description">
@@ -2697,6 +2895,20 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+            </div>
+                </div>
+            </div>
+            
+            <!-- 滚动指示器 -->
+            <div class="scroll-indicator">
+                <i class="fas fa-hand-point-right"></i>
+                <span>左右滑动查看更多</span>
+                <div class="scroll-dots">
+                    <div class="scroll-dot active"></div>
+                    <div class="scroll-dot"></div>
+                    <div class="scroll-dot"></div>
+                    <div class="scroll-dot"></div>
                 </div>
             </div>
         </div>
@@ -3104,28 +3316,76 @@
 
         // 移动端横向滚动指示器
         if (isMobile) {
+            // 处理关键里程碑对比滚动
             const scrollContainer = document.querySelector('.mobile-scroll-container');
-            const scrollDots = document.querySelectorAll('.scroll-dot');
-            
-            if (scrollContainer && scrollDots.length > 0) {
-                scrollContainer.addEventListener('scroll', function() {
-                    const scrollLeft = this.scrollLeft;
-                    const scrollWidth = this.scrollWidth;
-                    const clientWidth = this.clientWidth;
-                    const scrollableWidth = scrollWidth - clientWidth;
-                    
-                    // 计算当前是第几个卡片
-                    const cardIndex = Math.round((scrollLeft / scrollableWidth) * (scrollDots.length - 1));
-                    
-                    // 更新点点状态
-                    scrollDots.forEach((dot, index) => {
-                        if (index === cardIndex) {
-                            dot.classList.add('active');
-                        } else {
-                            dot.classList.remove('active');
-                        }
+            if (scrollContainer) {
+                const scrollDots = scrollContainer.parentElement.querySelectorAll('.scroll-dot');
+                if (scrollDots.length > 0) {
+                    scrollContainer.addEventListener('scroll', function() {
+                        const scrollLeft = this.scrollLeft;
+                        const scrollWidth = this.scrollWidth;
+                        const clientWidth = this.clientWidth;
+                        const scrollableWidth = scrollWidth - clientWidth;
+                        
+                        const cardIndex = Math.round((scrollLeft / scrollableWidth) * (scrollDots.length - 1));
+                        
+                        scrollDots.forEach((dot, index) => {
+                            if (index === cardIndex) {
+                                dot.classList.add('active');
+                            } else {
+                                dot.classList.remove('active');
+                            }
+                        });
                     });
-                });
+                }
+            }
+            
+            // 处理阶段详解滚动
+            const phaseContainers = document.querySelectorAll('.phase-scroll-container');
+            phaseContainers.forEach(container => {
+                const scrollDots = container.parentElement.querySelectorAll('.scroll-dot');
+                if (scrollDots.length > 0) {
+                    container.addEventListener('scroll', function() {
+                        const scrollLeft = this.scrollLeft;
+                        const scrollWidth = this.scrollWidth;
+                        const clientWidth = this.clientWidth;
+                        const scrollableWidth = scrollWidth - clientWidth;
+                        
+                        const cardIndex = Math.round((scrollLeft / scrollableWidth) * (scrollDots.length - 1));
+                        
+                        scrollDots.forEach((dot, index) => {
+                            if (index === cardIndex) {
+                                dot.classList.add('active');
+                            } else {
+                                dot.classList.remove('active');
+                            }
+                        });
+                    });
+                }
+            });
+            
+            // 处理核心假设对比滚动
+            const assumptionsContainer = document.querySelector('.assumptions-scroll-container');
+            if (assumptionsContainer) {
+                const scrollDots = assumptionsContainer.querySelectorAll('.scroll-dot');
+                if (scrollDots.length > 0) {
+                    assumptionsContainer.addEventListener('scroll', function() {
+                        const scrollLeft = this.scrollLeft;
+                        const scrollWidth = this.scrollWidth;
+                        const clientWidth = this.clientWidth;
+                        const scrollableWidth = scrollWidth - clientWidth;
+                        
+                        const cardIndex = Math.round((scrollLeft / scrollableWidth) * (scrollDots.length - 1));
+                        
+                        scrollDots.forEach((dot, index) => {
+                            if (index === cardIndex) {
+                                dot.classList.add('active');
+                            } else {
+                                dot.classList.remove('active');
+                            }
+                        });
+                    });
+                }
             }
         }
         
