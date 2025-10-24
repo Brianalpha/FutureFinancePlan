@@ -826,104 +826,272 @@
         /* Responsive */
         @media (max-width: 768px) {
             header {
-                padding: 60px 20px 50px;
+                padding: 40px 16px 30px;
             }
             
             header h1 {
-                font-size: 2rem;
-                margin-bottom: 16px;
+                font-size: 1.75rem;
+                margin-bottom: 12px;
+                line-height: 1.3;
             }
             
             header .subtitle {
-                font-size: 1rem;
+                font-size: 0.95rem;
+                line-height: 1.6;
             }
             
             section {
-                padding: 60px 20px;
+                padding: 40px 16px;
             }
             
             .section-title {
-                font-size: 1.75rem;
-                margin-bottom: 32px;
+                font-size: 1.5rem;
+                margin-bottom: 24px;
+                gap: 12px;
             }
             
             .section-title i {
-                font-size: 2rem;
+                font-size: 1.75rem;
             }
             
             .info-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 16px;
+            }
+            
+            .info-card {
+                padding: 20px;
             }
             
             .phase-content {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 16px;
             }
             
             .phase-card {
-                padding: 24px;
-                margin: 24px 0;
+                padding: 20px;
+                margin: 20px 0;
             }
             
             .phase-card h3 {
+                font-size: 1.25rem;
+                gap: 10px;
+            }
+            
+            .phase-card h3 i {
                 font-size: 1.5rem;
             }
             
+            .phase-subtitle {
+                font-size: 0.95rem;
+                margin-bottom: 16px;
+            }
+            
             .chart-section {
-                padding: 24px 16px;
+                padding: 20px 12px;
+                margin: 24px 0;
+            }
+            
+            .chart-section h3 {
+                font-size: 1.1rem;
+                margin-bottom: 16px;
+            }
+            
+            .chart-container {
+                height: 350px;
+                margin: 16px 0;
+            }
+            
+            table {
+                font-size: 0.8rem;
+            }
+            
+            th, td {
+                padding: 8px 6px;
+            }
+            
+            th {
+                font-size: 0.75rem;
+            }
+            
+            .version-tabs {
+                flex-direction: row;
+                gap: 8px;
+                padding: 0 4px;
+            }
+            
+            .tab-btn {
+                flex: 1;
+                min-width: 0;
+                justify-content: center;
+                padding: 14px 8px;
+                font-size: 0.85rem;
+                gap: 4px;
+                border-radius: var(--radius-md);
+            }
+            
+            .tab-btn i {
+                font-size: 1rem;
+            }
+            
+            .tab-btn span {
+                display: block;
+            }
+            
+            .key-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                margin: 24px 0;
+            }
+            
+            .stat-box {
+                padding: 20px 16px;
+            }
+            
+            .stat-value {
+                font-size: 1.75rem;
+            }
+            
+            .stat-label {
+                font-size: 0.8rem;
+            }
+            
+            blockquote {
+                padding: 24px 20px;
+                font-size: 1rem;
+                margin: 32px 0;
+                line-height: 1.7;
+            }
+            
+            blockquote::before {
+                font-size: 3rem;
+                left: 12px;
+            }
+            
+            .comparison-grid {
+                gap: 16px;
+            }
+            
+            .comparison-card {
+                padding: 20px;
+            }
+            
+            .comparison-card h4 {
+                font-size: 1rem;
+                margin-bottom: 16px;
+            }
+            
+            .version-row {
+                padding: 8px 0;
+                font-size: 0.9rem;
+            }
+            
+            .version-value {
+                font-size: 1rem;
+            }
+            
+            .expense-detail-card {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            .expense-detail-card h3 {
+                font-size: 1.15rem;
+                margin-bottom: 16px;
+            }
+            
+            .expense-item {
+                padding: 12px 14px;
+                font-size: 0.9rem;
+            }
+            
+            .expense-value {
+                font-size: 1rem;
+            }
+            
+            .phase-btn {
+                padding: 10px 16px;
+                font-size: 0.85rem;
+            }
+            
+            .highlight-box {
+                padding: 16px;
+                font-size: 0.9rem;
+            }
+            
+            .mortgage-info {
+                padding: 16px;
+                margin: 16px 0;
+            }
+            
+            .mortgage-info h4 {
+                font-size: 1rem;
+                margin-bottom: 12px;
+            }
+            
+            .mortgage-details {
+                font-size: 0.85rem;
+            }
+            
+            .version-badge {
+                display: block;
+                margin: 12px 0 0 0;
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+            
+            .assumptions-card {
+                padding: 20px;
+            }
+            
+            .assumptions-card h3 {
+                font-size: 1.1rem;
+            }
+            
+            .assumption-item {
+                padding: 12px 14px;
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            
+            header .subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .tab-btn {
+                padding: 12px 6px;
+                font-size: 0.8rem;
+            }
+            
+            .key-stats {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
             }
             
             .chart-container {
                 height: 300px;
             }
             
-            table {
-                font-size: 0.85rem;
-            }
-            
-            th, td {
-                padding: 10px 8px;
-            }
-            
-            .version-tabs {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .tab-btn {
-                width: 100%;
-                justify-content: center;
-                padding: 12px 24px;
-            }
-            
-            .key-stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 16px;
-            }
-            
             .stat-value {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
             
-            blockquote {
-                padding: 32px 24px;
-                font-size: 1.125rem;
-                margin: 40px 0;
+            .phase-selector {
+                flex-direction: column;
+                gap: 8px;
             }
             
-            blockquote::before {
-                font-size: 4rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .key-stats {
-                grid-template-columns: 1fr;
-            }
-            
-            .comparison-grid {
-                grid-template-columns: 1fr;
+            .phase-btn {
+                width: 100%;
             }
         }
     </style>
@@ -1424,7 +1592,7 @@
     </section>
 
         <!-- Summary -->
-        <section style="background: var(--bg-light);">
+    <section style="background: var(--bg-light);">
             <div class="container">
                 <blockquote>
                     无论是哪种情景，我们都能够实现27岁结婚购房、28岁迎接宝宝、32岁开始承担父母养老的核心目标。即便在最悲观的情况下，到42岁我们也能拥有277万的资产。这份规划告诉我们：我们的未来，建立在扎实的基础之上，无论风雨，我们都能携手前行。
@@ -1436,32 +1604,32 @@
     <!-- Optimistic Version -->
     <div id="optimistic-content" class="content-section">
         <section>
-            <div class="container">
-                <h2 class="section-title">
+        <div class="container">
+            <h2 class="section-title">
                     <i class="fas fa-rocket"></i>
                     乐观版财务规划
                     <span class="version-badge badge-optimistic">投资回报 8% · 顺利发展</span>
-                </h2>
-                
-                <div class="info-grid">
-                    <div class="info-card">
+            </h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
                         <h3><i class="fas fa-chart-line"></i> 核心假设</h3>
                         <ul>
                             <li>投资回报：年化 8%</li>
                             <li>27岁薪资：35.5万/年</li>
                             <li>职业发展：持续增长</li>
                             <li>42岁薪资：63.5万/年</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="info-card">
+                    </ul>
+                </div>
+                
+                <div class="info-card">
                         <h3><i class="fas fa-seedling"></i> 情景特点</h3>
                         <ul>
                             <li>积极投资策略</li>
                             <li>顺利职业晋升</li>
                             <li>收入持续上涨</li>
                             <li>最优发展路径</li>
-                        </ul>
+                    </ul>
                     </div>
                 </div>
                 
@@ -1683,26 +1851,26 @@
                 </h2>
 
                 <div class="info-grid">
-                    <div class="info-card">
+                <div class="info-card">
                         <h3><i class="fas fa-chart-line"></i> 核心假设</h3>
                         <ul>
                             <li>投资回报：年化 5%</li>
                             <li>27岁薪资：28万/年</li>
                             <li>27-31岁：薪资平台期</li>
                             <li>32岁跃升：46万/年</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="info-card">
+                    </ul>
+                </div>
+                
+                <div class="info-card">
                         <h3><i class="fas fa-balance-scale"></i> 情景特点</h3>
                         <ul>
                             <li>稳健投资策略</li>
                             <li>有职业平台期</li>
                             <li>最终实现跃升</li>
                             <li>最可能的路径</li>
-                        </ul>
-                    </div>
+                    </ul>
                 </div>
+            </div>
 
                 <div class="chart-section">
                     <h3 style="text-align: center; color: var(--medium-color); margin-bottom: 20px;">
@@ -1731,8 +1899,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
         <!-- Phases -->
         <section style="background: var(--bg-light);">
@@ -1908,13 +2076,13 @@
 
     <!-- Pessimistic Version -->
     <div id="pessimistic-content" class="content-section">
-        <section>
-            <div class="container">
-                <h2 class="section-title">
+    <section>
+        <div class="container">
+            <h2 class="section-title">
                     <i class="fas fa-shield-alt"></i>
                     悲观版财务规划
                     <span class="version-badge badge-pessimistic">投资回报 3% · 极限抗压</span>
-                </h2>
+            </h2>
 
                 <div class="info-grid">
                     <div class="info-card">
@@ -1937,206 +2105,206 @@
                         </ul>
                     </div>
                 </div>
-                
-                <div class="chart-section">
+            
+            <div class="chart-section">
                     <h3 style="text-align: center; color: var(--pessimistic-color); margin-bottom: 20px;">
                         未来20年财富增长轨迹（极限压力测试）
-                    </h3>
-                    <div class="chart-container">
+                </h3>
+                <div class="chart-container">
                         <canvas id="pessimisticChart"></canvas>
-                    </div>
-                    
-                    <div class="key-stats">
-                        <div class="stat-box">
-                            <div class="stat-label">27岁资产</div>
+                </div>
+                
+                <div class="key-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">27岁资产</div>
                             <div class="stat-value">86万</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-label">32岁资产</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">32岁资产</div>
                             <div class="stat-value">116万</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-label">37岁资产</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">37岁资产</div>
                             <div class="stat-value">182万</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-label">42岁资产</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">42岁资产</div>
                             <div class="stat-value">277万</div>
-                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- Phases -->
-        <section style="background: var(--bg-light);">
-            <div class="container">
-                <h2 class="section-title">
-                    <i class="fas fa-route"></i>
+    <section style="background: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-route"></i>
                     四个阶段详解（极限抗压版）
-                </h2>
+            </h2>
 
-                <!-- Phase 1 -->
-                <div class="phase-card">
-                    <h3><i class="fas fa-rocket"></i> 第一阶段：奋力筑基 (22-27岁)</h3>
+            <!-- Phase 1 -->
+            <div class="phase-card">
+                <h3><i class="fas fa-rocket"></i> 第一阶段：奋力筑基 (22-27岁)</h3>
                     <p class="phase-subtitle">在极低的投资回报下，依靠最原始的汗水，完成购房的资本积累</p>
-                    
-                    <div class="phase-content">
-                        <div class="phase-description">
-                            <div class="highlight-box">
+                
+                <div class="phase-content">
+                    <div class="phase-description">
+                        <div class="highlight-box">
                                 <strong>🎯 阶段成果</strong><br>
                                 到27岁时，我们依然积累了<strong>86万</strong>资产。支付<strong>25万</strong>首付和<strong>15万</strong>结婚基金后，仍有<strong>46万</strong>作为家庭启动资金。核心目标稳稳达成。
                             </div>
                             <div style="margin-top: 15px; padding: 15px; background: #fff3e0; border-radius: 8px;">
                                 <strong>📊 与乐观版对比：</strong><br>
                                 投资收益降低（8%→3%），27岁资产减少33万（119万→86万），但仍足够支付首付和结婚费用。
-                            </div>
                         </div>
-                        
-                        <div class="phase-table">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>年龄</th>
-                                        <th>税后年薪</th>
-                                        <th>年储蓄</th>
-                                        <th>累计资产</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                    </div>
+                    
+                    <div class="phase-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>年龄</th>
+                                    <th>税后年薪</th>
+                                    <th>年储蓄</th>
+                                    <th>累计资产</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                                     <tr><td>22</td><td>20万</td><td>14万</td><td>14万</td></tr>
                                     <tr><td>23</td><td>20万</td><td>14万</td><td>28.8万</td></tr>
                                     <tr><td>24</td><td>24万</td><td>17.4万</td><td>47.6万</td></tr>
                                     <tr><td>25</td><td>24万</td><td>17.4万</td><td>67万</td></tr>
                                     <tr><td>26</td><td>24万</td><td>16.8万</td><td><strong>86.3万</strong></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+            </div>
 
-                <!-- Phase 2 -->
-                <div class="phase-card">
+            <!-- Phase 2 -->
+            <div class="phase-card">
                     <h3><i class="fas fa-mountain"></i> 第二阶段：迎接风暴 (27-32岁)</h3>
                     <p class="phase-subtitle">用停滞8年的薪水，硬扛育儿和生活成本上涨的双重压力</p>
-                    
-                    <div class="phase-content">
-                        <div class="phase-description">
-                            <div class="highlight-box">
-                                <strong>👶 阶段成果</strong><br>
+                
+                <div class="phase-content">
+                    <div class="phase-description">
+                        <div class="highlight-box">
+                            <strong>👶 阶段成果</strong><br>
                                 到32岁时，家庭资产突破<strong>116万</strong>。我们用停滞的薪水扛住了压力，没有被压垮。
                             </div>
                             <div style="margin-top: 15px; padding: 15px; background: #ffebee; border-radius: 8px;">
                                 <strong>⚠️ 最大挑战：</strong><br>
                                 27-32岁薪资保持在28万，投资收益仅3%。育儿开销增加，年储蓄降至8万左右。这是整个规划中最艰难的5年。
-                            </div>
                         </div>
-                        
-                        <div class="phase-table">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>年龄</th>
-                                        <th>税后年薪</th>
-                                        <th>年储蓄</th>
-                                        <th>累计资产</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                    </div>
+                    
+                    <div class="phase-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>年龄</th>
+                                    <th>税后年薪</th>
+                                    <th>年储蓄</th>
+                                    <th>累计资产</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                                     <tr><td>27</td><td>28万</td><td>15.4万</td><td>63.5万</td></tr>
                                     <tr><td>28</td><td>28万</td><td>11.4万</td><td>77.2万</td></tr>
                                     <tr><td>29</td><td>28万</td><td>10.8万</td><td>90.6万</td></tr>
                                     <tr><td>30</td><td>28万</td><td>10.8万</td><td>104.5万</td></tr>
                                     <tr><td>31</td><td>28万</td><td>8.2万</td><td><strong>116.1万</strong></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+            </div>
 
-                <!-- Phase 3 -->
-                <div class="phase-card">
+            <!-- Phase 3 -->
+            <div class="phase-card">
                     <h3><i class="fas fa-hiking"></i> 第三阶段：穿越峡谷 (32-37岁)</h3>
                     <p class="phase-subtitle">在薪资停滞的末期，叠加父母赡养的责任，年储蓄降至冰点</p>
-                    
-                    <div class="phase-content">
-                        <div class="phase-description">
-                            <div class="highlight-box">
-                                <strong>💎 阶段成果</strong><br>
+                
+                <div class="phase-content">
+                    <div class="phase-description">
+                        <div class="highlight-box">
+                            <strong>💎 阶段成果</strong><br>
                                 35岁的薪资跃升让我们重回正轨。到37岁时，家庭资产达到<strong>182万</strong>，我们成功穿越了最狭窄的财务峡谷。
                             </div>
                             <div style="margin-top: 15px; padding: 15px; background: #e8f5e9; border-radius: 8px;">
                                 <strong>✨ 转折点：</strong><br>
                                 35岁薪资从28万跃升至39万（+39%），虽然涨幅不如均衡版，但足以缓解压力。这是我们坚持到底的回报。
-                            </div>
                         </div>
-                        
-                        <div class="phase-table">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>年龄</th>
-                                        <th>税后年薪</th>
-                                        <th>年储蓄</th>
-                                        <th>累计资产</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                    </div>
+                    
+                    <div class="phase-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>年龄</th>
+                                    <th>税后年薪</th>
+                                    <th>年储蓄</th>
+                                    <th>累计资产</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                                     <tr><td>32</td><td>28万</td><td>6.4万</td><td>126.1万</td></tr>
                                     <tr><td>33</td><td>28万</td><td>5.8万</td><td>135.9万</td></tr>
                                     <tr><td>34</td><td>28万</td><td>3.8万</td><td>143.9万</td></tr>
                                     <tr><td>35</td><td>39万</td><td>14.2万</td><td>162.8万</td></tr>
                                     <tr><td>36</td><td>39万</td><td>14.2万</td><td><strong>182.3万</strong></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+            </div>
 
-                <!-- Phase 4 -->
-                <div class="phase-card">
+            <!-- Phase 4 -->
+            <div class="phase-card">
                     <h3><i class="fas fa-flag-checkered"></i> 第四阶段：抵达彼岸 (37-42岁)</h3>
                     <p class="phase-subtitle">薪资进入最终平台期，依靠前15年积累的本金和雷打不动的纪律，走向安稳</p>
-                    
-                    <div class="phase-content">
-                        <div class="phase-description">
-                            <div class="highlight-box">
-                                <strong>🏆 最终成果</strong><br>
+                
+                <div class="phase-content">
+                    <div class="phase-description">
+                        <div class="highlight-box">
+                            <strong>🏆 最终成果</strong><br>
                                 到42岁时，家庭资产最终达到<strong>277万</strong>。家庭财务拥有了强大的"惯性"，不再完全依赖工资。
                             </div>
                             <div style="margin-top: 15px; padding: 15px; background: #e3f2fd; border-radius: 8px;">
                                 <strong>💪 底气所在：</strong><br>
                                 即使是最差情况，我们也能实现所有核心目标：买房、育儿、赡养父母，并拥有277万资产。这证明了我们的规划具有极强的抗压能力。
-                            </div>
                         </div>
-                        
-                        <div class="phase-table">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>年龄</th>
-                                        <th>税后年薪</th>
-                                        <th>年储蓄</th>
-                                        <th>累计资产</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                    </div>
+                    
+                    <div class="phase-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>年龄</th>
+                                    <th>税后年薪</th>
+                                    <th>年储蓄</th>
+                                    <th>累计资产</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                                     <tr><td>37</td><td>39万</td><td>13万</td><td>201.2万</td></tr>
                                     <tr><td>38</td><td>39万</td><td>13万</td><td>220.6万</td></tr>
                                     <tr><td>39</td><td>39万</td><td>11.8万</td><td>239.4万</td></tr>
                                     <tr><td>40</td><td>39万</td><td>11.8万</td><td>258.7万</td></tr>
                                     <tr><td>41</td><td>39万</td><td>10.6万</td><td><strong>277.4万</strong></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- Summary -->
-        <section>
-            <div class="container">
+    <section>
+        <div class="container">
                 <div style="background: #fff9e6; padding: 30px; border-radius: 15px; margin: 30px 0; border-left: 6px solid #ffc107;">
                     <h3 style="color: #f57c00; margin-bottom: 15px;">
                         <i class="fas fa-shield-alt"></i> 为什么要做悲观版规划？
@@ -2149,12 +2317,12 @@
                         我们依然能够<strong>买房、结婚、育儿、赡养父母</strong>，并在42岁时拥有277万资产时，我们就拥有了面对未来的<strong>真正底气</strong>。这份规划告诉我们：我们的幸福，不依赖运气，只依赖坚持。
                     </p>
                 </div>
-                
-                <blockquote>
+            
+            <blockquote>
                     这份规划证明了，我们未来的幸福，不建立在"升职加薪"的侥幸上，不建立在"投资大神"的幻想上，它只建立在一个东西上——<strong>我们的意志力</strong>。即使面对最坏的情况，我们依然可以靠自己，买下房子、养大孩子、孝顺父母，并最终为我们的家庭建起一座坚实的堡垒。这，就是我们爱情的底气。
-                </blockquote>
-            </div>
-        </section>
+            </blockquote>
+        </div>
+    </section>
     </div>
 
     <script>
@@ -2226,6 +2394,28 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // 检测是否为移动设备
+        const isMobile = window.innerWidth <= 768;
+        const isSmallMobile = window.innerWidth <= 480;
+
+        // 根据设备类型获取图表配置
+        function getChartConfig(isMobile, isSmallMobile) {
+            return {
+                legendFontSize: isSmallMobile ? 10 : (isMobile ? 11 : 14),
+                legendPadding: isSmallMobile ? 8 : (isMobile ? 12 : 20),
+                tooltipFontSize: isSmallMobile ? 11 : (isMobile ? 12 : 14),
+                tooltipBodySize: isSmallMobile ? 10 : (isMobile ? 11 : 13),
+                tooltipPadding: isSmallMobile ? 8 : (isMobile ? 10 : 12),
+                axisTitleSize: isSmallMobile ? 11 : (isMobile ? 12 : 14),
+                axisLabelSize: isSmallMobile ? 9 : (isMobile ? 10 : 12),
+                lineWidth: isSmallMobile ? 2 : (isMobile ? 2.5 : 3),
+                pointRadius: isSmallMobile ? 2.5 : (isMobile ? 3 : 4),
+                pointHoverRadius: isSmallMobile ? 4 : (isMobile ? 5 : 6)
+            };
+        }
+
+        const chartConfig = getChartConfig(isMobile, isSmallMobile);
+
         // 创建对比图表
         const comparisonCtx = document.getElementById('comparisonChart').getContext('2d');
         const comparisonChart = new Chart(comparisonCtx, {
@@ -2236,34 +2426,34 @@
                     {
                         label: '乐观版资产',
                         data: optimisticData.assets,
-                        borderColor: '#4CAF50',
-                        backgroundColor: 'rgba(76, 175, 80, 0.1)',
-                        borderWidth: 3,
+                        borderColor: '#10B981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        borderWidth: chartConfig.lineWidth,
                         tension: 0.4,
-                        pointRadius: 4,
-                        pointHoverRadius: 6,
+                        pointRadius: chartConfig.pointRadius,
+                        pointHoverRadius: chartConfig.pointHoverRadius,
                         fill: false
                     },
                     {
                         label: '均衡版资产',
                         data: mediumData.assets,
-                        borderColor: '#2196F3',
-                        backgroundColor: 'rgba(33, 150, 243, 0.1)',
-                        borderWidth: 3,
+                        borderColor: '#3B82F6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        borderWidth: chartConfig.lineWidth,
                         tension: 0.4,
-                        pointRadius: 4,
-                        pointHoverRadius: 6,
+                        pointRadius: chartConfig.pointRadius,
+                        pointHoverRadius: chartConfig.pointHoverRadius,
                         fill: false
                     },
                     {
                         label: '悲观版资产',
                         data: pessimisticData.assets,
-                        borderColor: '#FF9800',
-                        backgroundColor: 'rgba(255, 152, 0, 0.1)',
-                        borderWidth: 3,
+                        borderColor: '#F59E0B',
+                        backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                        borderWidth: chartConfig.lineWidth,
                         tension: 0.4,
-                        pointRadius: 4,
-                        pointHoverRadius: 6,
+                        pointRadius: chartConfig.pointRadius,
+                        pointHoverRadius: chartConfig.pointHoverRadius,
                         fill: false
                     }
                 ]
@@ -2281,25 +2471,26 @@
                         position: 'top',
                         labels: {
                             usePointStyle: true,
-                            padding: 20,
+                            padding: chartConfig.legendPadding,
                             font: {
-                                size: 14,
+                                size: chartConfig.legendFontSize,
                                 family: "'Noto Sans SC', sans-serif",
                                 weight: 'bold'
-                            }
+                            },
+                            boxWidth: isMobile ? 30 : 40
                         }
                     },
                     tooltip: {
                         backgroundColor: 'rgba(44, 62, 80, 0.95)',
                         titleFont: {
-                            size: 14,
+                            size: chartConfig.tooltipFontSize,
                             family: "'Noto Sans SC', sans-serif"
                         },
                         bodyFont: {
-                            size: 13,
+                            size: chartConfig.tooltipBodySize,
                             family: "'Noto Sans SC', sans-serif"
                         },
-                        padding: 12,
+                        padding: chartConfig.tooltipPadding,
                         displayColors: true,
                         callbacks: {
                             title: function(context) {
@@ -2311,7 +2502,7 @@
                                     label += ': ';
                                 }
                                 const value = context.parsed.y;
-                                label += (value / 10000).toFixed(1) + '万元';
+                                label += (value / 10000).toFixed(1) + '万';
                                 return label;
                             }
                         }
@@ -2320,13 +2511,20 @@
                 scales: {
                     x: {
                         title: {
-                            display: true,
+                            display: !isSmallMobile,
                             text: '年龄',
                             font: {
-                                size: 14,
+                                size: chartConfig.axisTitleSize,
                                 family: "'Noto Sans SC', sans-serif",
                                 weight: 'bold'
                             }
+                        },
+                        ticks: {
+                            font: {
+                                size: chartConfig.axisLabelSize
+                            },
+                            maxRotation: 45,
+                            minRotation: 0
                         },
                         grid: {
                             display: false
@@ -2334,15 +2532,18 @@
                     },
                     y: {
                         title: {
-                            display: true,
+                            display: !isSmallMobile,
                             text: '累计资产（万元）',
                             font: {
-                                size: 14,
+                                size: chartConfig.axisTitleSize,
                                 family: "'Noto Sans SC', sans-serif",
                                 weight: 'bold'
                             }
                         },
                         ticks: {
+                            font: {
+                                size: chartConfig.axisLabelSize
+                            },
                             callback: function(value) {
                                 return (value / 10000).toFixed(0);
                             }
@@ -2365,37 +2566,37 @@
                 datasets: [
                     {
                         label: '税后年薪',
-                            data: data.salaries,
+                        data: data.salaries,
                         borderColor: '#6A8A9E',
                         backgroundColor: 'rgba(106, 138, 158, 0.1)',
-                        borderWidth: 2,
+                        borderWidth: chartConfig.lineWidth - 0.5,
                         tension: 0.4,
-                            pointRadius: 3,
-                            pointHoverRadius: 5,
-                            yAxisID: 'y'
+                        pointRadius: chartConfig.pointRadius - 1,
+                        pointHoverRadius: chartConfig.pointHoverRadius - 1,
+                        yAxisID: 'y'
                     },
                     {
                         label: '年总开销',
-                            data: data.expenses,
-                        borderColor: '#E8B4A8',
-                        backgroundColor: 'rgba(232, 180, 168, 0.1)',
-                        borderWidth: 2,
+                        data: data.expenses,
+                        borderColor: '#E87461',
+                        backgroundColor: 'rgba(232, 116, 97, 0.1)',
+                        borderWidth: chartConfig.lineWidth - 0.5,
                         tension: 0.4,
-                            pointRadius: 3,
-                            pointHoverRadius: 5,
-                            yAxisID: 'y'
-                        },
-                        {
-                            label: '年末累计资产',
-                            data: data.assets,
-                            borderColor: color,
-                            backgroundColor: color + '20',
-                        borderWidth: 4,
+                        pointRadius: chartConfig.pointRadius - 1,
+                        pointHoverRadius: chartConfig.pointHoverRadius - 1,
+                        yAxisID: 'y'
+                    },
+                    {
+                        label: '年末累计资产',
+                        data: data.assets,
+                        borderColor: color,
+                        backgroundColor: color + '20',
+                        borderWidth: chartConfig.lineWidth + 1,
                         tension: 0.4,
-                        pointRadius: 5,
-                        pointHoverRadius: 8,
-                            fill: true,
-                            yAxisID: 'y'
+                        pointRadius: chartConfig.pointRadius + 1,
+                        pointHoverRadius: chartConfig.pointHoverRadius + 2,
+                        fill: true,
+                        yAxisID: 'y'
                     }
                 ]
             },
@@ -2412,24 +2613,25 @@
                         position: 'top',
                         labels: {
                             usePointStyle: true,
-                            padding: 20,
+                            padding: chartConfig.legendPadding,
                             font: {
-                                size: 13,
+                                size: chartConfig.legendFontSize,
                                 family: "'Noto Sans SC', sans-serif"
-                            }
+                            },
+                            boxWidth: isMobile ? 30 : 40
                         }
                     },
                     tooltip: {
                         backgroundColor: 'rgba(44, 62, 80, 0.9)',
                         titleFont: {
-                            size: 14,
+                            size: chartConfig.tooltipFontSize,
                             family: "'Noto Sans SC', sans-serif"
                         },
                         bodyFont: {
-                            size: 13,
+                            size: chartConfig.tooltipBodySize,
                             family: "'Noto Sans SC', sans-serif"
                         },
-                        padding: 12,
+                        padding: chartConfig.tooltipPadding,
                         callbacks: {
                             title: function(context) {
                                 return context[0].label + '岁';
@@ -2440,7 +2642,7 @@
                                     label += ': ';
                                 }
                                 const value = context.parsed.y;
-                                    label += (value / 10000).toFixed(1) + '万元';
+                                label += (value / 10000).toFixed(1) + '万';
                                 return label;
                             }
                         }
@@ -2449,13 +2651,20 @@
                 scales: {
                     x: {
                         title: {
-                            display: true,
+                            display: !isSmallMobile,
                             text: '年龄',
                             font: {
-                                size: 14,
+                                size: chartConfig.axisTitleSize,
                                 family: "'Noto Sans SC', sans-serif",
                                 weight: 'bold'
                             }
+                        },
+                        ticks: {
+                            font: {
+                                size: chartConfig.axisLabelSize
+                            },
+                            maxRotation: 45,
+                            minRotation: 0
                         },
                         grid: {
                             display: false
@@ -2463,15 +2672,18 @@
                     },
                     y: {
                         title: {
-                            display: true,
+                            display: !isSmallMobile,
                             text: '金额（万元）',
                             font: {
-                                size: 14,
+                                size: chartConfig.axisTitleSize,
                                 family: "'Noto Sans SC', sans-serif",
                                 weight: 'bold'
                             }
                         },
                         ticks: {
+                            font: {
+                                size: chartConfig.axisLabelSize
+                            },
                             callback: function(value) {
                                 return (value / 10000).toFixed(0);
                             }
